@@ -1,5 +1,5 @@
 # micropython-localtime
-Replaces the, non-functional, built-in and aims to implement the full Python definition.
+Replacement for the, non-functional, built-in.
 
 The built-in function time.localtime() simply duplicates gmtime() without the implied date & time localisation. The function given here replaces the built-in and aims to implement the full Python definition. That is, given a region code and the local time zone, it gives the local time, consistent with daylight saving time (DST), for all the worldwide regions (i.e. those that have predictable DST dates). It is only really necessary for regions that use DST.
 ## Details
