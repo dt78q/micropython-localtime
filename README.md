@@ -10,6 +10,8 @@ The full version, localtime([secs]), converts the time [secs] expressed in secon
 The simpler, more efficient, version, loc_time(), returns the 8-tuple matching the format of gmtime() and should be sufficient for general timekeeping. 
 Both functions can be readily simplified for a single location as shown in the example loc_time_eur.py.
 ## Usage
-The RTC is always set to UTC then, after editing the function to set the appropriate region code and timezone, localtime() or loc_time() will return the current local date-time. The reliability is dependent on regions adhering to the defined dates; there is no provision for unexpected date changes.
-The expressions are valid to the end of 2099.
+The RTC is always set to UTC then, after editing the function to set the appropriate region code and timezone, localtime() or loc_time() will return the current local date-time. 
+
+The reliability is dependent on regions adhering to the defined dates; there is no provision for unexpected date changes. The expressions are valid to the end of 2099.
+
 localtime() contains a test function that can be used to check that the function triggers the DST change on the correct date and time for any given year.
