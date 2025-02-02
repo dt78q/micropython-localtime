@@ -1,5 +1,5 @@
 # micropython-localtime
-From the built-in module 'time' localtime() simply duplicates gmtime() without the expected date & time localisation. This is due to the complexities of time zones and DST dates, see [here]
+From the built-in module `time` localtime() simply duplicates gmtime() without the expected date & time localisation. This is due to the complexities of time zones and DST dates, see [here]
 worldwide regions that have predictable dates for daylight saving changes the two functions given here provide a system clock with automatic daylight saving time (DST) correction.
 ## Details
 Despite what the docs say,(https://github.com/orgs/micropython/discussions/12378) and [here](https://forums.raspberrypi.com/viewtopic.php?t=337259&sid=dc6f7a405e66ee699aa182ff7b802eaf). The alternative localtime() given here returns the full 9-tuple as defined by Python [localtime](https://docs.python.org/3/library/time.html) - that is, given a region code and the local time zone, it returns the local time, including daylight saving time (DST) changes. It is only really useful for regions that use DST.
