@@ -18,8 +18,8 @@ rtc = RTC()
 year = gmtime()[0]
 tz = int(timezone * 3600)
 fwd = mktime((year, 3, 31-(5*year//4+4)%7, 1, 0,0,0,0,0)) 
-back = mktime((year, 10, 31-(5*year//4+1)%7, 2, 0,0,0,0,0)) -3600
-
+back = mktime((year, 10, 31-(5*year//4+1)%7, 1, 0,0,0,0,0))
+#   == mktime((year, 10, 31-(5*year//4+1)%7, 2, 0,0,0,0,0)) -3600
 def loc_time():
     return gmtime(time() +(3600 if fwd<=time()<back else 0) +tz)
 
@@ -30,7 +30,7 @@ year, month, day = 2027, 10, 31
 hr, min, sec = 1, 59, 55  # Sets local standard time - not local DST!
 # recalculate fwd & back for current year
 fwd = mktime((year, 3, 31-(5*year//4+4)%7, 1, 0,0,0,0,0))
-back = mktime((year, 10, 31-(5*year//4+1)%7, 2, 0,0,0,0,0)) -3600
+back = mktime((year, 10, 31-(5*year//4+1)%7, 1, 0,0,0,0,0))
 # print('forward =',gmtime(fwd))
 # print('back =',gmtime(back))
 # set RTC keeping the different tuples in order
